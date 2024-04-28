@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Tunnel Try-on">
+  <meta name="keywords" content="Virtual Try-on, Customizable Generation, Diffusion Model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tunnel Try-on</title>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Tunnel Try-on: Excavating Spatial-temporal Tunnels for High-quality Virtual Try-on in Videos</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Zhengze Xu<sup>1 <sup> </a>&nbsp</a>&nbsp  
+            </span>
+            <span class="author-block">
+              Mengting Chen<sup>2<sup> </a>&nbsp</a>&nbsp  
+            </span>
+            
+            <span class="author-block">
+              Zhao Wang<sup>2<sup>  </a></a>&nbsp</a>&nbsp  
+            </span>
+            <span class="author-block">
+              Linyu Xing<sup>2</sup>  </a></a>&nbsp</a>&nbsp  
+            </span>
+            <span class="author-block">
+              Zhonghua Zhai<sup>2</sup>  </a></a>&nbsp</a>&nbsp  
+            </span>
+            <span class="author-block">
+              Nong Sang<sup>1</sup>  </a></a>&nbsp</a>&nbsp  
+            </span>
+            <span class="author-block">
+              Jinsong Lan<sup>2</sup>   </a></a>&nbsp</a>&nbsp  
+            </span>
+            <span class="author-block">
+              Shuai Xiao<sup>2</sup>   </a></a>&nbsp</a>&nbsp  
+            </span>
+            <span class="author-block">
+              Changxin Gao<sup>1</sup>   </a></a>&nbsp</a>&nbsp  
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Huazhong University of Science and Technology</a>&nbsp</a>&nbsp  </span>
+            
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>2</sup>Alibaba Group</a>&nbsp</a>&nbsp  </span>
+            
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=   "https://arxiv.org/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+                </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+      <div class="container">
+          <div class="item item-steve">
+          <img src="./generate_images/images/teaser/fig_3_teaser_v3.png"  width="100%">
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Video try-on is a challenging task and has not been well tackled in previous works. The main obstacle lies in preserving the details of the clothing and modeling the coherent motions simultaneously.
+
+            Faced with those difficulties, we address video try-on by proposing a diffusion-based framework named "<b>Tunnel Try-on</b>".  
+
+            The core idea is excavating a ``focus tunnel'' in the input video that gives close-up shots around the clothing regions. We zoom in on the region in the tunnel to better preserve the fine details of the clothing.
+
+            To generate coherent motions, we first leverage the Kalman filter to construct smooth crops in the focus tunnel and inject the position embedding of the tunnel into attention layers to improve the continuity of the generated videos.
+
+            In addition, we develop an environment encoder to extract the context information outside the tunnels as supplementary cues.
+
+            Equipped with these techniques, Tunnel Try-on keeps the fine details of the clothing and synthesizes stable and smooth videos.
+
+            Demonstrating significant advancements, Tunnel Try-on could be regarded as the first attempt toward the commercial-level application of virtual try-on in videos.
+          </p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+         <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="text-align: center;">Adapting to Varied Camera-Person Relationships</h2>
+              <div class="content has-text-justified">
+                <p>
+                  Tunnel Try-on can not only handle complex clothing and backgrounds but also adapt to different types of movements in the video.
+                </p>
+              </div>
+            <h2 class="title is-4" style="text-align: center;">Person-to-Camera Distance Variation</h2>
+            <div class="columns is-centered is-multiline">
+              <div class="column">
+                <video width="960" height="720" controls>
+                  <source src="generate_images/videos/motion_type1.mp4" type="video/mp4" width="960" height="360">
+                  <source src="movie.ogg" type="video/ogg">
+                  <source src="movie.webm" type="video/webm">
+                  <object data="generate_images/videos/motion_type1.mp4" width="960" height="720">
+                    <embed src="movie.swf" width="960" height="720">
+                  </object>
+                </video>
+              </div>
+            </div>
+            <h2 class="title is-4" style="text-align: center;">Parallel Motion Relative to the Camera</h2>
+              <div class="columns is-centered is-multiline">
+              <div class="column">
+              <video width="960" height="720" controls>
+                <source src="generate_images/videos/motion_type2.mp4" type="video/mp4" width="960" height="720">
+                <source src="movie.ogg" type="video/ogg">
+                <source src="movie.webm" type="video/webm">
+                <object data="generate_images/videos/motion_type2.mp4" width="960" height="720">
+                  <embed src="movie.swf" width="960" height="720">
+                </object>
+              </video>
+              </div>
+            </div>
+            <h2 class="title is-4" style="text-align: center;">Camera Angle Dynamics</h2>
+            <div class="columns is-centered is-multiline">
+              <div class="column">
+              <video width="960" height="720" controls>
+                <source src="generate_images/videos/motion_type3.mp4" type="video/mp4" width="960" height="720">
+                <source src="movie.ogg" type="video/ogg">
+                <source src="movie.webm" type="video/webm">
+                <object data="generate_images/videos/motion_type3.mp4" width="960" height="720">
+                  <embed src="movie.swf" width="960" height="720">
+                </object>
+              </video>
+              </div>
+            </div>
+
+
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="text-align: center;">Adapting to Different Clothing Styles</h2>
+              <div class="content has-text-justified">
+                <p>
+                  Unlike previous video try-on methods limited to fitting tight-fitting tops, Our Tunnel Try-on can perform try-on tasks for different types of tops and bottoms.
+                </p>
+              </div>
+            <div class="columns is-centered has-text-centered">
+              <div class="column">
+                <video width="960" height="720" controls>
+                  <source src="generate_images/videos/appendix_figure8_a_tops2tops.mp4" type="video/mp4" width="960" height="720">
+                  <source src="movie.ogg" type="video/ogg">
+                  <source src="movie.webm" type="video/webm">
+                  <object data="generate_images/videos/appendix_figure8_a_tops2tops.mp4" width="960" height="720">
+                    <embed src="movie.swf" width="960" height="720">
+                  </object>
+                </video>
+              </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+              <div class="column">
+                <video width="960" height="720" controls>
+                  <source src="generate_images/videos/appendix_figure8_b_tops2tops.mp4" type="video/mp4" width="960" height="720">
+                  <source src="movie.ogg" type="video/ogg">
+                  <source src="movie.webm" type="video/webm">
+                  <object data="generate_images/videos/appendix_figure8_b_tops2tops.mp4" width="960" height="720">
+                    <embed src="movie.swf" width="960" height="720">
+                  </object>
+                </video>
+              </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+              <div class="column">
+                <video width="960" height="720" controls>
+                  <source src="generate_images/videos/appendix_figure7_a_bottoms2bottoms.mp4" type="video/mp4" width="960" height="720">
+                  <source src="movie.ogg" type="video/ogg">
+                  <source src="movie.webm" type="video/webm">
+                  <object data="generate_images/videos/appendix_figure7_a_bottoms2bottoms.mp4" width="960" height="720">
+                    <embed src="movie.swf" width="960" height="720">
+                  </object>
+                </video>
+              </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+              <div class="column">
+                <video width="960" height="720" controls>
+                  <source src="generate_images/videos/appendix_figure7_b_bottoms2bottoms.mp4" type="video/mp4" width="960" height="720">
+                  <source src="movie.ogg" type="video/ogg">
+                  <source src="movie.webm" type="video/webm">
+                  <object data="generate_images/videos/appendix_figure7_b_bottoms2bottoms.mp4" width="960" height="720">
+                    <embed src="movie.swf" width="960" height="720">
+                  </object>
+                </video>
+              </div>
+            </div>
+
+
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <h2 class="title is-3" style="text-align: center;">Framework</h2>
+                  <div class="content has-text-justified">
+                    <p>
+                      Given an input video and a clothing image, Tunnel Try-on first extracts a focus tunnel to zoom in on the region around the garments to better preserve the details. The zoomed region is represented by a sequence of tensors consisting of the background latent, latent noise, and the garment mask. Human pose information is added to the latent noise to assist the generation. Afterward, the 9-channel tensor is fed into the Main U-Net while a Ref U-Net and a CLIP Encoder are used to extract the representations of the clothing image, the clothing representations are added to the Main U-Net with the ref-attention.  At the same time, Tunnel Try-on utilizes the tunnel embedding into temporal attention to generate more consistent motions
+        and develop an environment encoder to extract the global context as additional guidance.
+                    </p>
+                  </div>
+                <div class="columns is-centered has-text-centered">
+                  <div class="column">
+                    <div class="item item-steve">
+                      <img src="./generate_images/images/fig2_overall-arch_v2.png"  width="80%">
+                    </div>   
+                      
+                  </div>
+                </div>
+        <!-- <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="text-align: center;">Single-garment try-on</h2>
+              <div class="content has-text-justified">
+                <p>
+                  Wear-Any-Way supports various of input types including shop-to-model, model-to-model, shop-to-street, model-to-street, street-to-street, etc.
+                </p>
+              </div>
+            <div class="columns is-centered has-text-centered">
+              <div class="column">
+                <div class="item item-steve">
+                  <img src="./generate_images/images/base/supply_fig_3_single_for_page_new.png"  width="100%">
+                </div>   
+                  
+              </div>
+            </div>
+
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="text-align: center;">Multi-garment try-on</h2>
+              <div class="content has-text-justified">
+                <p>
+                  Wear-Any-Way enables users to provide upper- and down-clothes simultaneously and generates the try-on results in one pass.
+                </p>
+              </div>
+            <div class="columns is-centered has-text-centered">
+              <div class="column">
+                <div class="item item-steve">
+                  <img src="./generate_images/images/base/supply_fig_2_outfit_for_page_new.png"  width="100%">
+                </div>   
+                  
+              </div>
+            </div>
+  </div> -->
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{xu2024tunnel,
+      title={Tunnel Try-on: Excavating Spatial-temporal Tunnels for High-quality Virtual Try-on in Videos},
+      author={Xu, Zhengze and Chen, Mengting and Wang, Zhao and Xing, Linyu and Zhai, Zhonghua and Sang, Nong and Lan, Jinsong and Xiao, Shuai and Gao, Changxin},
+      journal={arXiv preprint},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      
+    </div>
+    <div class="columns is-centered">
+      <div class="content">
+        <p>
+          The template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

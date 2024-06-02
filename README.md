@@ -6,10 +6,11 @@ If you find Tunnel Try-on useful for your work please cite:
 
 ```
 @article{xu2024tunnel,
-      title={Tunnel Try-on: Excavating Spatial-temporal Tunnels for High-quality Virtual Try-on in Videos},
-      author={Xu, Zhengze and Chen, Mengting and Wang, Zhao and Xing, Linyu and Zhai, Zhonghua and Sang, Nong and Lan, Jinsong and Xiao, Shuai and Gao, Changxin},
-      journal={arXiv preprint},
-      year={2024}
+  title={Tunnel Try-on: Excavating Spatial-temporal Tunnels for High-quality Virtual Try-on in Videos},
+  author={Xu, Zhengze and Chen, Mengting and Wang, Zhao and Xing, Linyu and Zhai, Zhonghua and Sang, Nong and Lan, Jinsong and Xiao, Shuai and Gao, Changxin},
+  journal={arXiv preprint arXiv:2404.17571},
+  year={2024}
+}
 ```
 
 # Website License
